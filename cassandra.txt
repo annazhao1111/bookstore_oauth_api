@@ -1,0 +1,32 @@
+// start Cassandra
+1. cassandra
+
+// start cqlsh
+2. cqlsh
+
+// look at key spaces (databases)
+3. describe keyspaces;
+
+// create a new key spaces
+4. CREATE KEYSPACE oauth WITH REPLICATION = {'class':'SimpleStrategy', 'replication_factor':1};
+
+5. describe keyspaces;
+
+// use oauth key spaces
+6. USE oauth;
+
+// look at tables in oauth key spaces
+7. describe tables;
+
+// create access token table
+8. CREATE TABLE access_tokens(access_token varchar PRIMARY KEY, user_id bigint, client_id bigint, expires bigint);
+
+9. describe tables;
+
+// query access_tokens table
+10. select * from access_tokens where access_token='sdfj';
+// (0 rows)
+// when query table, always use the primary key to get best performance
+
+
+
