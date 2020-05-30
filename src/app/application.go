@@ -1,7 +1,6 @@
 package app
 
 import (
-	"github.com/annazhao/bookstore_oauth_api/src/clients/cassandra"
 	"github.com/annazhao/bookstore_oauth_api/src/domain/accesstoken"
 	"github.com/annazhao/bookstore_oauth_api/src/http"
 	"github.com/annazhao/bookstore_oauth_api/src/repository/db"
@@ -11,13 +10,6 @@ import (
 var router = gin.Default()
 
 func StartApplication() {
-	// here is to make sure we can get a session from cassandra, and actually works
-	session, dbErr := cassandra.GetSession()
-	if dbErr != nil {
-		panic(dbErr)
-	}
-	session.Close()
-
 	// dbRepository := db.NewRepository()
 	// atService := accesstoken.NewService(dbRepository) // it needs to interact with database
 	// atHandler := http.NewHandler(atService)
