@@ -15,7 +15,7 @@ func TestAccessTokenConstants(t *testing.T) {
 }
 
 func TestGetNewAccessToken(t *testing.T) {
-	at := GetNewAccessToken()
+	at := GetNewAccessToken(1)
 	assert.False(t, at.IsExpired(), "brand new access token should not be expired")
 	// if at.IsExpired() {
 	// 	// GetNewAccessToken() returns not a pointer, so we can't use at == nil
